@@ -8,8 +8,10 @@ NAME2="opencv_contrib"
 TYPE=".tar.gz"
 FILE1="$NAME1$TYPE"
 FILE2="$NAME2$TYPE"
-DOWNLOADURL1="https://github.com/opencv/opencv/archive/4.3.0.tar.gz"
-DOWNLOADURL2="https://github.com/opencv/opencv_contrib/archive/4.3.0.tar.gz"
+DOWNLOADURL1="https://github.com/opencv/opencv/archive/4.5.2.tar.gz"
+DOWNLOADURL2="https://github.com/opencv/opencv_contrib/archive/4.5.2.tar.gz"
+# "Pascal" "Volta" "Turing" "Ampere"
+CUDA_GENERATION="Volta"
 echo $NAME1 will be installed in "$ROOTDIR"
 
 mkdir -p "$ROOTDIR/downloads"
@@ -45,7 +47,7 @@ export PKG_CONFIG_PATH="$ROOTDIR"/lib/pkgconfig:$PKG_CONFIG_PATH
 cmake \
     -DBUILD_EXAMPLES=OFF \
     -DWITH_QT=OFF \
-    -DCUDA_GENERATION=Auto \
+    -DCUDA_GENERATION=$CUDA_GENERATION \
     -DOpenGL_GL_PREFERENCE=GLVND \
     -DBUILD_opencv_hdf=OFF \
     -DBUILD_PERF_TESTS=OFF \
