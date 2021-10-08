@@ -28,7 +28,7 @@ wait
 ./zzffmpeg.sh
 wait
 # install opencv 4.5.2
-./zzopencv.sh
+./zzopencv.sh $1
 # you may put this line into your .bashrc
 export OpenCV_DIR=$ZZROOT
 # install boost
