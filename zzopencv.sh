@@ -11,7 +11,7 @@ FILE2="$NAME2$TYPE"
 DOWNLOADURL1="https://github.com/opencv/opencv/archive/4.5.2.tar.gz"
 DOWNLOADURL2="https://github.com/opencv/opencv_contrib/archive/4.5.2.tar.gz"
 # "Pascal" "Volta" "Turing" "Ampere"
-CUDA_GENERATION="Volta"
+CUDA_GENERATION=$1
 echo $NAME1 will be installed in "$ROOTDIR"
 
 mkdir -p "$ROOTDIR/downloads"
